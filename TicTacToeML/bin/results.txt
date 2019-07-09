@@ -1,0 +1,6 @@
+RandomAI vs RandomAI
+1,000,000 games
+P1 wins : 584412
+P1 ties : 127414
+P1 loses: 288174
+
