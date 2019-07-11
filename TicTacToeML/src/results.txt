@@ -4,3 +4,12 @@ P1 wins : 584412
 P1 ties : 127414
 P1 loses: 288174
 
+EvolutionAI vs RandomAI
+1,000,000 games
+100 players in training
+100,000 training iterations
+(evolution ai is always player 1)
+Player1 wins: 734264
+Player1 ties: 39352
+Player1 loses: 226384
+Note: these results are much less consitent than random v random, however player1 typically has 70-80% wins

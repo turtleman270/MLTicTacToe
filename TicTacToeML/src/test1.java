@@ -7,12 +7,18 @@ public class test1 {
 	public static void main(String[] args){
 
 		Board board = new Board();
-		BasePlayerAI player1 = new RandomPlayerAI();
-		BasePlayerAI player2 = new MLPlayerAI('b');
+		
+		EvolutionTrainer trainer = new EvolutionTrainer();
+		
+		BasePlayerAI player1 = trainer.train();
+		BasePlayerAI player2 = new RandomPlayerAI();
+		System.out.println("done training");
+		//BasePlayerAI player2 = new RandomPlayerAI('q');
+		
 		
 		for(int i = 0; i<1000000; i++){
 			board.reset();
-			char winner = playAGame(board, player1, player2);
+			char winner = Utils.playAGame(board, player1, player2);
 			if(winner == board.emptyChar){
 				player1.addTie();
 				player2.addTie();
@@ -34,16 +40,5 @@ public class test1 {
 
 	}
 	
-	public static char playAGame(Board board, BasePlayerAI player1, BasePlayerAI player2){
-		while(true){
-			player1.move(board);
-			if(board.gameEnded()){
-				return board.winner();
-			}
-			player2.move(board);
-			if(board.gameEnded()){
-				return board.winner();
-			}
-		}
-	}
+
 }
